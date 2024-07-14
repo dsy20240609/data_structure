@@ -1,0 +1,166 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<sstream>
+
+using namespace std;
+int main() {
+    std::string line;
+    while(std::getline(std::cin,line)) {
+        if(line.empty()) {
+	    break;
+	}
+	else {
+          istringstream ss(line);
+          vector<string> words;
+          string word;
+	  while(ss>>word) {
+	      words.push_back(word);
+	  }
+	   
+	  bool isNeg= false;
+	  int sum=0;
+	  int tmp=0;
+	  for(int i = 0 ; i < words.size(); i++) {
+	    if(i == 0 && words[i] == "negative") {
+	        isNeg= true;
+		continue;
+	    }
+            if(isDigit(words[i])) {
+	       tmp=tmp+transToDigit(words[i]);
+	    } else if (isUnit(words[i])) {
+	        sum=sum+tmp*(transToUnit(words[i]));
+	    }
+	  }
+	}
+	std::cout<< sum << endl;
+    }
+}
+bool isDigit(string s) {
+    switch(s) {
+	    case "zero":
+                   return true;
+            case "one" :
+	           return true;
+	    case "two" :
+	           return true;
+	    case "three" :
+	           return true;
+	    case "four":
+	           return true;
+	    case "five":
+	           return true;
+	    case  "six":
+	           return true;
+	    case   "seven":
+	           return true;
+	    case   "eight":
+	           return true;
+	    case   "nine" :
+	           return true;
+	    case   "ten" :
+	           return true;
+	    case   "eleven" :
+	           return true;
+	    case   "twelve" :
+	           return true;
+	    case   "thirteen" :
+	           return true;
+	    case   "fourteen" :
+	           return true;
+	    case   "fifteen" :
+	           return true;
+	    case   "sixteen" :
+	           return true;
+	    case   "seventeen" :
+	           return true;
+	     case  "eighteen" :
+	           return true;
+	     case  "nineteen" :
+	           return true;
+	     case   "twenty" :
+		   return true;
+	     case   "thirty" :
+		   return true;
+	     case  "forty" :
+		   return true;
+	     case  "fifty" :
+		    return true;
+	     case   "sixty":
+		     return true;
+             case   "seventy" :
+		     return true;
+	     case    "eighty" :
+		    return true;
+	     case   "ninety" :
+		    return true;
+      default :
+		    return false;
+    
+    }
+}
+
+int transToDigit(string s) {
+    switch(s) {
+	    case "zero":
+                   return 0;
+            case "one" :
+	           return 1;
+	    case "two" :
+	           return 2;
+	    case "three" :
+	           return 3;
+	    case "four":
+	           return 4;
+	    case "five":
+	           return 5;
+	    case  "six":
+	           return 6;
+	    case   "seven":
+	           return 7;
+	    case   "eight":
+	           return 8;
+	    case   "nine" :
+	           return 9;
+	    case   "ten" :
+	           return 10;
+	    case   "eleven" :
+	           return 11;
+	    case   "twelve" :
+	           return 12;
+	    case   "thirteen" :
+	           return 13;
+	    case   "fourteen" :
+	           return 14;
+	    case   "fifteen" :
+	           return 15;
+	    case   "sixteen" :
+	           return 16;
+	    case   "seventeen" :
+	           return 17;
+	     case  "eighteen" :
+	           return true;
+	     case  "nineteen" :
+	           return true;
+	     case   "twenty" :
+		   return true;
+	     case   "thirty" :
+		   return true;
+	     case  "forty" :
+		   return true;
+	     case  "fifty" :
+		    return true;
+	     case   "sixty":
+		     return true;
+             case   "seventy" :
+		     return true;
+	     case    "eighty" :
+		    return true;
+	     case   "ninety" :
+		    return true;
+      default :
+		    return false;
+    
+    }
+}
+

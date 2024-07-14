@@ -1,0 +1,17 @@
+#include<istream>
+#include<list>
+#include<sstream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main() {
+  int n,m;
+  std::getline(cin,input);
+  istringstream ss(input);
+  vector<string> s1;
+  string
+  while()
+
+}
